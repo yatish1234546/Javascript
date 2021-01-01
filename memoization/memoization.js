@@ -9,11 +9,12 @@ function memoize(fun) {
   let cache = {};
 
   return function(n) {
+    console.log(cache);
     if (cache[n] !== undefined) {
       console.log("Sent From Cache");
       return cache[n];
     } else {
-       console.log("Freshly Created");
+      console.log("Freshly Created");
       return (cache[n] = fun(n));
     }
   };
@@ -21,7 +22,4 @@ function memoize(fun) {
 
 let memoizedFib = memoize(fibonacci);
 
-memoizedFib(5);
-memoizedFib(6);
-memoizedFib(9);
-memoizedFib(6)
+console.log(memoizedFib);

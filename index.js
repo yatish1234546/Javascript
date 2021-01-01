@@ -1,7 +1,8 @@
 // Import stylesheets
 import "./style.css";
 // import "./promise/promise.js";
-import "./prototypes/prototype-interview.js";
+// import "./prototypes/prototype-interview.js";
+import "./memoization/memoization.js";
 // import "./higher-order-functions/higherorderfuncs.js";
 // Write Javascript code!
 

@@ -21,5 +21,3 @@ function memoize(fun) {
 }
 
 let memoizedFib = memoize(fibonacci);
-
-console.log(memoizedFib);

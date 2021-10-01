@@ -1,43 +1,35 @@
-a = [1,0,1,1,0,0,1,1,0,0]
-a= [0,0,0,0,0,1,1,1,1,1]
+a = [1, 0, 1, 1, 0, 0, 1, 1, 0, 0];
+a = [0, 0, 0, 0, 0, 1, 1, 1, 1, 1];
 
+let obj = {};
 
-let obj = {
-};
-
-for(let el of a) {
-	obj[el] = (obj[el] || 0) + 1;
+for (let el of a) {
+  obj[el] = (obj[el] || 0) + 1;
 }
 
 obl = {
-
-0: 3,
-1: 3
-}
-
+  0: 3,
+  1: 3,
+};
 
 for (let el in obj) {
-	for(let i=0; i< obj[el]; i++) {
-  	a.push(el)
+  for (let i = 0; i < obj[el]; i++) {
+    a.push(el);
   }
 }
 
+a = [1, 2, 3, 4, 6, 7, 8];
+output = 5;
 
-
-a = [1,2,3,4,6,7,8]
-output = 5
-
-
-"1->2->3->4->5->2"
+// ('1->2->3->4->5->2');
 
 node = {
-vale
-}
+  vale,
+};
 
 let current = this.head;
 
-while(current) {
-current 
-current = current.next;
+while (current) {
+  current;
+  current = current.next;
 }
-

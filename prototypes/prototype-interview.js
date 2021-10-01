@@ -1,23 +1,25 @@
-function Role(role) {
-  this.role = role;
-}
+function Vehicle() {}
 
-function Company(name) {
-  Role.call(this);
-  this.name = name;
-}
-
-Role.prototype.domain = () => {
-  this.domain = "Engineering";
+Vehicle.prototype.travelTime = function () {
+  return this._timeTaken;
 };
 
-Company.prototype = Object.create(Role.prototype);
-Company.prototype.organization = () => {
-  this.organization = "Digi";
-  console.log(this.role, this.domain, this.organization, this.name);
-};
+function Bus() {
+  this._timeTaken = '15min';
+}
 
-const company = new Company("STSPL");
-company.domain();
-company.organization();
-console.log(company);
+Bus.prototype = Vehicle.prototype;
+
+function Car() {
+  this._timeTaken = '5min';
+}
+
+Car.prototype = Vehicle.prototype;
+
+function Commute() {}
+
+Commute.prototype.travelTime = function (transport) {
+  return transport.travelTime();
+};
+const B1 = new Commute();
+console.log(B1.travelTime(new Bus()));

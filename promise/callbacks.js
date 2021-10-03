@@ -1,41 +1,23 @@
-function CustomPromise(func) {}
-CustomPromise.prototype.then = function() {
-  return func(response => response, null);
-};
-
-CustomPromise.prototype.catch = function() {
-  return func(null, error => error);
-};
-const customPromise = new CustomPromise((resolve, reject) => {
-  const token = Math.floor(Math.random() * 100);
-
-  if (token < 50) {
-    resolve({ token, message: 200 });
-  } else {
-    reject({ token: null, message: 404 });
-  }
-});
-
-console.log(customPromise);
-
-const promise = new Promise((resolve, reject) => {
-  const token = Math.floor(Math.random() * 100);
-
-  if (token < 50) {
+function getMyToken(callback1, callback2) {
+  const token = generateToken();
+  if (token > 50) {
     setTimeout(() => {
-      resolve({ token, message: 200 });
-    }, 100);
+      callback1({ status: 200, token });
+    }, 3000);
   } else {
-    setTimeout(() => {
-      reject({ token: null, message: 404 });
-    }, 100);
+    callback2({ status: 400, message: 'Not Found' });
   }
-});
+}
 
-console.log(promise);
+getMyToken(
+  (response) => {
+    console.log(response);
+  },
+  (reject) => {
+    console.log(reject);
+  }
+);
 
-// promise.then(token => {
-//   console.log(token);
-// }).catch(error => {
-//   console.log(error)
-// });
+function generateToken() {
+  return (Math.random() * 100).toFixed();
+}

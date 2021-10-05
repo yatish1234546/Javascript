@@ -8,11 +8,3 @@ import './promise/callbacks.js';
 
 const appDiv = document.getElementById('app');
 appDiv.innerHTML = `<h1>JS Starter</h1>`;
-
-function cache() {
-  for (let i = 0; i < 10000; i++) {
-    console.log(i);
-  }
-}
-
-cache();
